@@ -30,7 +30,7 @@ const getFileIcon = (fileName: FileName) => {
 
 export default function Tabsbar({ openTabs, activeFile, onSelectTab, onCloseTab }: TabsbarProps) {
     return (
-        <div className="flex items-center h-10 bg-[#1a1b26] border-b border-[#16161e] overflow-x-auto">
+        <div className="flex items-center h-10 bg-[#1a1b26] border-b border-[#16161e] overflow-x-auto scrollbar-none">
             {openTabs.map((tab) => {
                 const isActive = activeFile === tab;
                 const isHome = tab === 'Home.html';
