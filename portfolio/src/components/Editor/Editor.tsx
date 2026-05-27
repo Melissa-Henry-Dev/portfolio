@@ -27,7 +27,7 @@ export default function Editor({
                 return <Contact />
 
             default:
-                return <Home />
+                return <Home />       
         }
     };
 

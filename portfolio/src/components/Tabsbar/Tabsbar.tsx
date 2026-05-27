@@ -30,7 +30,7 @@ const getFileIcon = (fileName: FileName) => {
 
 export default function Tabsbar({ openTabs, activeFile, onSelectTab, onCloseTab }: TabsbarProps) {
     return (
-        <div className="flex items-center h-10 bg-[#1a1b26] border-b border-[#16161e] overflow-x-auto scrollbar-none">
+        <div className="flex items-center h-9 bg-[#1f2335] border-b border-[#16161e] overflow-y-hidden scrollbar-none">
             {openTabs.map((tab) => {
                 const isActive = activeFile === tab;
                 const isHome = tab === 'Home.html';
@@ -39,10 +39,10 @@ export default function Tabsbar({ openTabs, activeFile, onSelectTab, onCloseTab 
                     <div
                         key={tab}
                         onClick={() => onSelectTab(tab)}
-                        className={`h-10 flex items-center gap-2 px-4 text-xs font-medium border-[#16161e] cursor-pointer relative group transition-colors duration-150 shrink-0 ${
+                        className={`h-10 flex items-center gap-2 px-4 text-xs font-medium border-r border-[#16161e] cursor-pointer relative group transition-colors duration-150 shrink-0 ${
                             isActive
                                 ? 'bg-[#1f2335] text-[#a9b1d6] border-t-2 border-[#7aa2f7]'
-                                : 'bg-[#1a1d2a]/60 text-[#a9b1d6]/50 hover:bg-[#24283b]/30 hover:text-[#a9b1d6]'
+                                : 'bg-[#1f2335]/60 text-[#a9b1d6]/50 hover:bg-[#24283b]/30 hover:text-[#a9b1d6]'
                         }`}
                     >
                         {getFileIcon(tab)}
@@ -67,7 +67,7 @@ export default function Tabsbar({ openTabs, activeFile, onSelectTab, onCloseTab 
                     </div>
                 );
             })}
-            <div className='flex-1 h-full bg-[#1a1d2a]/40 border-b border-[#16161e]' />
+            <div className='flex-1 h-full bg-[#1a1d2a]/40  border-[#16161e]' />
         </div>
     );
 }
