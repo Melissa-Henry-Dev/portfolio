@@ -5,6 +5,8 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Tabsbar from "./components/Tabsbar/Tabsbar";
 import Editor from "./components/Editor/Editor";
 import Statusbar from "./components/Statusbar/Statusbar";
+import Titlebar from "./components/Titlebar/Titlebar";
+import Breadcrumbs from "./components/Breadcrumbs/Breadcrumbs";
 
  export type FileName = 
   | 'Home.html'
@@ -42,6 +44,7 @@ export function App() {
 
   return (
     <div className="flex flex-col h-screen w-screen bg-[#24283b] text-[#a9b1d6] select-none overflow-hidden">
+      <Titlebar />
       <div className="flex flex-1 overflow-hidden">
         <Activitybar 
           isSidebarOpen={isSidebarOpen}
@@ -62,6 +65,7 @@ export function App() {
             onSelectTab={setActiveFile}
             onCloseTab={closeTab}
           />
+          <Breadcrumbs activeFile={activeFile} />
           <Editor activeFile={activeFile} />
         </div>
       </div>
